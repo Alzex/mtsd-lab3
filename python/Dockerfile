@@ -1,10 +1,10 @@
-FROM python:3.10-buster
+FROM python:3.10-alpine
 
 WORKDIR /app
 
-COPY requirements/backend.in .
+COPY requirements.txt requirements.txt
 
-RUN pip install --no-cache-dir -r backend.in
+RUN pip3 install -r requirements.txt
 
 COPY . .
 
